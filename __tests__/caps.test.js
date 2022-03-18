@@ -8,16 +8,21 @@ describe("testing the three events", () => {
   let consoleSpy;
 
   beforeEach(() => {
-    consoleSpy = jest.spyOn(console, "log");
+    consoleSpy = jest.spyOn(console, "log").mockImplementation();
   });
   afterAll(() => {
     consoleSpy.mockRestore();
   });
 
   it("testing the pick up event", async () => {
-    eventsEmmitter.emit("pickup", value);
-    await consoleSpy();
-    expect(consoleSpy).toHaveBeenCalled();
+    // jest.runAllTimers();
+    setTimeout(async () => {
+      jes.useFakeTimers();
+      eventsEmmitter.emit("pickup", value);
+      await consoleSpy();
+      // jest.advanceTimersByTime(6000);
+      expect(consoleSpy).toHaveBeenCalled();
+    }, 5000);
   });
 
   it("testing the inTransit event", async () => {
