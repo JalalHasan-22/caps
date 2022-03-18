@@ -1,0 +1,25 @@
+{
+  "name": "caps",
+  "version": "1.0.0",
+  "description": "The Code Academy Parcel Service",
+  "main": "caps",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JalalHasan-22/caps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JalalHasan-22/caps/issues"
+  },
+  "homepage": "https://github.com/JalalHasan-22/caps#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
+  }
+}
