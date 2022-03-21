@@ -1,13 +1,12 @@
 "use strict";
 
 const eventsEmmitter = require("../lib/events");
-const caps = require("../caps");
 
 describe("testing the three events", () => {
   const value = "testing";
   let consoleSpy;
 
-  beforeEach(() => {
+  beforeAll(() => {
     consoleSpy = jest.spyOn(console, "log").mockImplementation();
   });
   afterAll(() => {
@@ -16,13 +15,12 @@ describe("testing the three events", () => {
 
   it("testing the pick up event", async () => {
     // jest.runAllTimers();
-    setTimeout(async () => {
-      jes.useFakeTimers();
-      eventsEmmitter.emit("pickup", value);
-      await consoleSpy();
-      // jest.advanceTimersByTime(6000);
-      expect(consoleSpy).toHaveBeenCalled();
-    }, 5000);
+
+    // jest.useFakeTimers();
+    eventsEmmitter.emit("pickup", value);
+    await consoleSpy();
+    // jest.advanceTimersByTime(6000);
+    expect(consoleSpy).toHaveBeenCalled();
   });
 
   it("testing the inTransit event", async () => {
